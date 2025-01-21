@@ -1,0 +1,816 @@
+{
+	"info": {
+		"_postman_id": "e24d0f5d-d2c7-4ea7-afd9-666c5ec3af78",
+		"name": "task-management-system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33259687"
+	},
+	"item": [
+		{
+			"name": "Validation",
+			"item": [
+				{
+					"name": "Авторизация администратора 2 Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1@gmail.com\",\n    \"password\": \"useruser\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Запрос несуществующей задачи",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Получение задач конкретного автора c неправильными параметрами",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoyLCJzdWIiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzczOTA2NzUsImV4cCI6MTczNzUzNDY3NX0.CHcRweo1tMlH9arD94LWHZJL0EJYLjr0tYpXPbh5xps",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Author-Id",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/resource/author?page=-1&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource",
+								"author"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "-1"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение задач конкретного исполнителя c неправильными параметрами",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoyLCJzdWIiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzczOTA2NzUsImV4cCI6MTczNzUzNDY3NX0.CHcRweo1tMlH9arD94LWHZJL0EJYLjr0tYpXPbh5xps",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Assignee-Id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/resource/assignee?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource",
+								"assignee"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление задачи от имени администратора с неправильными параметрами",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoxLCJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJpYXQiOjE3MzczNDM1NjIsImV4cCI6MTczNzQ4NzU2Mn0.7Z6MW1mtVv6Pz5LW-EoSWE9IO1VQH4D_V55nCgiOGys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\": \"1\",    \n    \"title\": \"Построить дачу\",\n    \"description\": \"Хочу 2-ух этажную, с бассейном\",\n    \"status\": \"IN_PROGRESS\",\n    \"priority\": \"AVERAGE\",\n    \"assignee\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/resource",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление задачи с неправильными параметрами",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Авторизация пользователя",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1@gmail.com\",\n    \"password\": \"useruser\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление статуса задачи исполнителем",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data and Happypath",
+			"item": [
+				{
+					"name": "Регистрация нового пользователя 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1@gmail.com\",\n    \"password\": \"useruser\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Регистрация нового пользователя 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user2@gmail.com\",\n    \"password\": \"useruser\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение админских прав",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiaWQiOjEsInN1YiI6InVzZXIxQGdtYWlsLmNvbSIsImlhdCI6MTczNzI5OTIzNiwiZXhwIjoxNzM3NDQzMjM2fQ.8nhrpqgRzVSc-p4b9wpyRm13YkMr6KxaSzge-9cmRCQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/example/get-admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"example",
+								"get-admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Авторизация зарегистрированного пользователя 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1@gmail.com\",\n    \"password\": \"useruser\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление задачи 1 от имени админмистратора",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoxLCJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJpYXQiOjE3MzczMzE5MzIsImV4cCI6MTczNzQ3NTkzMn0.5sFDI-P2yI5zYP2u8mD4sKGedijMoD3bEdEIXxb-a5A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Построить дачу\",\n    \"description\": \"Хочу 2-ух этажную, с бассейном\",\n    \"priority\": \"HIGH\",\n    \"assignee\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/resource",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление задачи 2 от имени админмистратора",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoyLCJzdWIiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzczODU1MjIsImV4cCI6MTczNzUyOTUyMn0.-6cvWL6dpiOMo3SPGt_6KeArSw0azC-JhuQYjul64R4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Съездить отдохнуть на север\",\n    \"description\": \"Хочу кататься на снегоходе!\",\n    \"priority\": \"HIGH\",\n    \"assignee\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/resource",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание комментария 1 от имени администратора",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoxLCJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJpYXQiOjE3MzczNDUwMTMsImV4cCI6MTczNzQ4OTAxM30.UV3kw9X3WXNibWc1NwrjCv8vBpg5pHuZC0uTX7DtvRI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\": \"1\",\n    \"comment\": \"Крутая задача\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/resource/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание комментария 2 от имени администратора",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoxLCJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJpYXQiOjE3MzczNDUwMTMsImV4cCI6MTczNzQ4OTAxM30.UV3kw9X3WXNibWc1NwrjCv8vBpg5pHuZC0uTX7DtvRI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\": \"1\",\n    \"comment\": \"Крутая задача\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/resource/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Обновление задачи от имени администратора",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoxLCJzdWIiOiJ1c2VyMUBnbWFpbC5jb20iLCJpYXQiOjE3MzczNDM1NjIsImV4cCI6MTczNzQ4NzU2Mn0.7Z6MW1mtVv6Pz5LW-EoSWE9IO1VQH4D_V55nCgiOGys",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\": \"1\",    \n    \"title\": \"Построить дачу\",\n    \"description\": \"Хочу 2-ух этажную, с бассейном\",\n    \"status\": \"IN_PROGRESS\",\n    \"priority\": \"AVERAGE\",\n    \"assignee\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/resource",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Авторизация зарегистрированного пользователя 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1@gmail.com\",\n    \"password\": \"useruser\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание комментария 1 от пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiaWQiOjEsInN1YiI6InVzZXIxQGdtYWlsLmNvbSIsImlhdCI6MTczNzM0NjkyNCwiZXhwIjoxNzM3NDkwOTI0fQ.vxHavabO9oSjJvPyXKaQ4CXe7o4eTISxwglPMzhaY1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\": \"1\",\n    \"comment\": \"Неудачная задача\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/resource/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"resource",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание комментария 2 от пользователя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwiaWQiOjEsInN1YiI6InVzZXIxQGdtYWlsLmNvbSIsImlhdCI6MTczNzM0NjkyNCwiZXhwIjoxNzM3NDkwOTI0fQ.vxHavabO9oSjJvPyXKaQ4CXe7o4eTISxwglPMzhaY1A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"taskId\": \"1\",\n    \"comment\": \"Неудачная задача\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/resource/comment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"resource",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Авторизация администратора 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1@gmail.com\",\n    \"password\": \"useruser\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение задач конкретного автора",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoyLCJzdWIiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzczOTA2NzUsImV4cCI6MTczNzUzNDY3NX0.CHcRweo1tMlH9arD94LWHZJL0EJYLjr0tYpXPbh5xps",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Author-Id",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/resource/author?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource",
+								"author"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Получение задач конкретного исполнителя",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9BRE1JTiIsImlkIjoyLCJzdWIiOiJ1c2VyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzczOTA2NzUsImV4cCI6MTczNzUzNDY3NX0.CHcRweo1tMlH9arD94LWHZJL0EJYLjr0tYpXPbh5xps",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Assignee-Id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/admin/resource/assignee?page=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource",
+								"assignee"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удалить задачу по id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/resource/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"resource",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

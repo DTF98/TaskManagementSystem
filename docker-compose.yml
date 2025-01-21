@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  task-management-system:
+    image: task-management-system:latest
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/TaskManagementSystemRepository
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    depends_on:
+      - postgres
+    networks:
+      - ps
+
+  postgres:
+    image: postgres:16.3-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=TaskManagementSystemRepository
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - ps
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
+networks:
+  ps:
+    driver: bridge
