@@ -1,40 +1,40 @@
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/TaskManagementSystemApplication.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/config/JwtAuthenticationFilter.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/config/SecurityConfig.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/controller/AuthController.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/dto/JwtAuthenticationResponse.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/dto/SignInRequest.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/dto/SignUpRequest.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/dto/UserDTO.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/model/Role.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/model/User.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/repository/UserRepository.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/service/AuthenticationService.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/service/JwtService.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/service/UserService.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/dto/AddCommentDTO.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/mapper/CommentMapper.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/model/Comment.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/model/CommentDTO.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/repository/CommentRepository.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/service/CommentService.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/errorHandler/ErrorHandler.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/errorHandler/errorResponse/ErrorResponse.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/exception/NotEnoughRightsForChanges.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/exception/NotFoundTaskException.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/exception/NotFoundUserException.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/exception/RegistrationException.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/controller/TaskAdminController.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/controller/TaskUserController.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/CreateTaskDTO.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/TaskDTO.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/TaskWithCommentsDTO.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/UpdateAdminTaskDTO.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/UpdateUserTaskDTO.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/mapper/TaskMapper.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/model/Priority.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/model/Status.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/model/Task.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/repository/TaskRepository.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/service/TaskAdminService.java
-/Users/denisboltunov/Desktop/taskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/service/TaskUserService.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/TaskManagementSystemApplication.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/config/JwtAuthenticationFilter.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/config/SecurityConfig.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/controller/AuthController.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/dto/JwtAuthenticationResponse.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/dto/SignInRequest.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/dto/SignUpRequest.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/dto/UserDTO.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/model/Role.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/model/User.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/repository/UserRepository.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/service/AuthenticationService.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/service/JwtService.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/auth/service/UserService.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/dto/AddCommentDTO.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/mapper/CommentMapper.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/model/Comment.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/model/CommentDTO.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/repository/CommentRepository.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/comment/service/CommentService.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/errorHandler/ErrorHandler.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/errorHandler/errorResponse/ErrorResponse.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/exception/NotEnoughRightsForChanges.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/exception/NotFoundTaskException.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/exception/NotFoundUserException.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/exception/RegistrationException.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/controller/TaskAdminController.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/controller/TaskUserController.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/CreateTaskDTO.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/TaskDTO.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/TaskWithCommentsDTO.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/UpdateAdminTaskDTO.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/dto/UpdateUserTaskDTO.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/mapper/TaskMapper.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/model/Priority.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/model/Status.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/model/Task.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/repository/TaskRepository.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/service/TaskAdminService.java
+/Users/denisboltunov/Desktop/Pets Projects/TaskManagementSystem/src/main/java/ru/DTF98/taskManagementSystem/task/service/TaskUserService.java

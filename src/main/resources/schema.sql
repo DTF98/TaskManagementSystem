@@ -1,4 +1,4 @@
---DROP TABLE IF EXISTS users, tasks, comments;
+DROP TABLE IF EXISTS users, tasks, comments;
 
 CREATE TABLE IF NOT EXISTS users (
     id BIGINT GENERATED ALWAYS AS IDENTITY NOT NULL,

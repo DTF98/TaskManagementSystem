@@ -13,8 +13,8 @@ import ru.DTF98.taskManagementSystem.task.model.Task;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-01-21T05:02:40+0500",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 17.0.10 (Amazon.com Inc.)"
+    date = "2025-01-21T06:38:42+0500",
+    comments = "version: 1.6.3, compiler: javac, environment: Java 21 (Oracle Corporation)"
 )
 @Component
 public class CommentMapperImpl implements CommentMapper {

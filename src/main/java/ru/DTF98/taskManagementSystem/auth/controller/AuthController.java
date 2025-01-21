@@ -36,7 +36,8 @@ public class AuthController {
 
     @GetMapping("/get-admin")
     @Operation(summary = "Получить роль ADMIN (для демонстрации и тестов)")
-    public void getAdmin() {
-        userService.getAdmin();
+    public String getAdmin() {
+        Long id = userService.getAdmin();
+        return String.format("Пользователь с id = %d теперь обладает правами администратора", id);
     }
 }
